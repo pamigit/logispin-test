@@ -1,0 +1,245 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Arial";
+  background: #000000;
+  font-size: 14px;
+  width: 100%;
+}
+
+html, body, ul, ol, li, form, fieldset, legend {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  margin-top: 0;
+}
+
+fieldset, img {
+  border: 0;
+}
+
+li {
+  list-style: none;
+}
+
+.container {
+  position: relative;
+}
+
+.hidden {
+  display: none;
+}
+
+.navigation {
+  width: 100%;
+}
+.navigation__menu {
+  width: 100%;
+  background-color: #202020;
+}
+.navigation__menu i {
+  background-color: #3D3C3C;
+  color: #797C81;
+  width: 40px;
+  height: 40px;
+  padding: 14px;
+  cursor: pointer;
+}
+.navigation__btn {
+  width: 100%;
+  border-radius: 5px;
+  background-color: #A3BC47;
+  color: white;
+}
+.navigation__btn-clock {
+  display: inline-block;
+  width: 40px;
+  position: relative;
+  padding: 15px;
+  margin-right: 90px;
+  font-size: 12px;
+}
+.navigation__btn-clock img {
+  vertical-align: middle;
+}
+.navigation__btn-clock hr {
+  transform: rotate(70deg);
+  position: absolute;
+  width: 62px;
+  background-color: #92AB3D;
+  height: 1px;
+  border: none;
+  top: 23px;
+  left: 82px;
+}
+.navigation__btn-text {
+  display: inline-block;
+  padding: 15px;
+}
+.navigation__list-menu {
+  margin: 8px 0 0 0;
+}
+.navigation__list-menu ul + li {
+  margin-top: 0;
+}
+.navigation__list-menu li {
+  background-color: #202020;
+  margin: 1px 0;
+  font-size: 12px;
+  padding: 10px;
+  position: relative;
+  cursor: pointer;
+}
+.navigation__list-menu li:last-child {
+  margin-bottom: 0;
+}
+.navigation__list-menu li a {
+  text-decoration: none;
+  color: white;
+}
+.navigation__list-menu li a + img {
+  position: absolute;
+  right: 0;
+  vertical-align: middle;
+  padding-right: 10px;
+}
+.navigation__list-menu .tab--active {
+  padding: 0;
+}
+.navigation__list-menu .tab--active span {
+  display: inline-block;
+  color: white;
+  padding: 15px 50px 15px 10px;
+  background-color: #388A40;
+  -webkit-clip-path: polygon(0 0, 85% 0, 100% 100%, 0% 100%);
+          clip-path: polygon(0 0, 85% 0, 100% 100%, 0% 100%);
+}
+.navigation__mini-menu {
+  background-color: #202020;
+}
+.navigation__mini-menu::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.navigation__mini-menu li {
+  float: left;
+  width: 19.6%;
+  margin-right: 0.5%;
+  margin-top: 0;
+  margin-bottom: 0;
+  text-align: center;
+  padding: 8px;
+  background-color: #181818;
+}
+.navigation__mini-menu li:nth-child(5) {
+  margin-right: 0;
+}
+.navigation__mini-menu li a {
+  text-decoration: none;
+}
+.navigation__mini-menu li a img {
+  vertical-align: middle;
+}
+
+.banner {
+  position: relative;
+}
+.banner__img {
+  width: 100%;
+  height: 245px;
+}
+.banner__box {
+  position: absolute;
+  top: 15px;
+  left: 10px;
+  color: white;
+}
+.banner__large-text {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+.banner__large-text--important {
+  font-size: 30px;
+}
+.banner__normal-text {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 0.8;
+  margin-bottom: 25px;
+}
+.banner__small-text {
+  font-size: 12px;
+}
+.banner__btn {
+  display: inline-block;
+  padding: 10px 15px;
+  text-align: center;
+  border: 2px solid white;
+  border-radius: 5px;
+  background-color: #329135;
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.banner__desktop-text {
+  font-size: 10px;
+  font-style: italic;
+  margin: 5px 0;
+  display: none;
+}
+.banner__menu::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.banner__menu li {
+  float: left;
+  width: 24.625%;
+  margin-right: 0.5%;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 8px 4px;
+  background-color: #202020;
+  height: 87px;
+}
+.banner__menu li:nth-child(4) {
+  margin-right: 0;
+}
+.banner__menu li a {
+  color: white;
+  text-decoration: none;
+}
+.banner__menu li a p {
+  font-size: 11px;
+}
+.banner__menu--disable {
+  color: #797C81;
+  margin-bottom: 0;
+  font-style: italic;
+}
+
+@media screen and (min-width: 768px) {
+  .navigation {
+    width: 245px;
+  }
+  .navigation__menu {
+    display: none;
+  }
+
+  .banner {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 255px;
+  }
+  .banner__desktop-text {
+    display: block;
+  }
+}

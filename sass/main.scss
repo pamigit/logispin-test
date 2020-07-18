@@ -1,0 +1,211 @@
+@import "variables";
+@import "reset";
+@import "mixins";
+
+.container {
+    position: relative;
+}
+.hidden {
+    display: none;
+}
+.navigation {
+    width: 100%;
+    &__menu {
+        width: 100%;
+        background-color: $dark-grey-primary-color;
+        i {
+            background-color: $grey-color;
+            color: $light-grey-color;
+            width: 40px;
+            height: 40px;
+            padding: 14px;
+            cursor: pointer;
+        }
+    }
+    &__btn {
+        width: 100%;
+        border-radius: 5px;
+        background-color: $btn-green-color;
+        color: white;
+        &-clock {
+            display: inline-block;
+            width: 40px;
+            position: relative;
+            padding: 15px;
+            margin-right: 90px;
+            font-size: 12px;
+            img {
+                vertical-align: middle;
+            }
+            hr {
+                transform: rotate(70deg); 
+                position: absolute;
+                width: 62px;
+                background-color: $line-with-angle-color;
+                height: 1px;
+                border: none;
+                top: 23px;
+                left: 82px;
+            }
+        }
+        &-text {
+            display: inline-block;
+            padding: 15px;
+        }
+    }
+    &__list-menu {
+        margin: 8px 0 0 0;
+        ul + li {
+            margin-top: 0;
+        }
+        li {
+            background-color: $dark-grey-primary-color;
+            margin: 1px 0;
+            font-size: 12px;
+            padding: 10px;
+            position: relative;
+            cursor: pointer;
+            &:last-child {
+                margin-bottom: 0;
+            }
+            a {
+                text-decoration: none;
+                color: white;
+            }
+            a + img {
+                position: absolute;
+                right: 0;
+                vertical-align: middle;
+                padding-right: 10px;
+            }
+            
+        }
+        .tab--active {
+            padding: 0;
+            span {
+                display: inline-block;
+                color: white;
+                padding: 15px 50px 15px 10px;
+                background-color: $btn-dark-green-color;
+                clip-path: polygon(0 0, 85% 0, 100% 100%, 0% 100%);
+            }
+        }
+    }
+    &__mini-menu {
+        @include clearFix;
+        background-color: $dark-grey-primary-color;
+        li {
+            float: left;
+            width: (98% / 5);
+            margin-right: 0.5%;
+            margin-top: 0;
+            margin-bottom: 0;
+            text-align: center;
+            padding: 8px;
+            background-color: $dark-grey-color;
+            &:nth-child(5) {
+                margin-right: 0;
+            }
+            a {
+                text-decoration: none;
+                img {
+                    vertical-align: middle;
+                }
+            }
+        }
+    }
+}
+
+.banner {
+    position: relative;
+    &__img {
+        width: 100%;
+        height: 245px;
+    }
+    &__box {
+        position: absolute;
+        top: 15px;
+        left: 10px;
+        color: white;
+    }
+    &__large-text {
+        font-size: 18px;
+        margin-bottom: 10px;
+        &--important {
+            font-size: 30px;
+        }
+    }
+    &__normal-text {
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 0.8;
+        margin-bottom: 25px;
+    }
+    &__small-text {
+        font-size: 12px;
+    }
+    &__btn {
+        display: inline-block;
+        padding: 10px 15px;
+        text-align: center;
+        border: 2px solid white;
+        border-radius: 5px;
+        background-color: $btn-second-green-color;
+        color: white;
+        font-size: 18px;
+        font-weight: 600;
+        cursor: pointer;
+    }
+    &__desktop-text {
+        font-size: 10px;
+        font-style: italic;
+        margin: 5px 0;
+        display: none;
+    }
+    &__menu {
+        @include clearFix;
+        li {
+            float: left;
+            width: (98.5% / 4);
+            margin-right: 0.5%;
+            margin-top: 0;
+            margin-bottom: 0;
+            padding: 8px 4px;
+            background-color: $dark-grey-primary-color;
+            height: 87px;
+            &:nth-child(4) {
+                margin-right: 0;
+            }
+            a {
+                color: white;
+                text-decoration: none;
+                p {
+                    font-size: 11px;
+                }
+            }
+        }
+        &--disable {
+            color: $light-grey-color;
+            margin-bottom: 0;
+            font-style: italic;
+        }
+    }
+}
+
+@media screen and (min-width: $medium-mq) {
+    .navigation {
+        width: 245px;
+        &__menu {
+            display: none;
+        }
+    }
+    .banner {
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 255px;
+        &__desktop-text {
+            display: block;
+        }
+    }
+}
